@@ -10,9 +10,40 @@ const nav = document.querySelector('.nav');
 const tabs = document.querySelectorAll('.operations__tab');
 const tabsContainer = document.querySelector('.operations__tab-container');
 const tabsContent = document.querySelectorAll('.operations__content');
-
-///////////////////////////////////////
+const btnCreateAccount = document.querySelector('.btn-create-account');
+const form = document.querySelector('.modal__form');
+//////////////////const form = document.querySelector('.modal__form');
+/////////////////
 // Modal window
+const formDataEntries = [];
+
+form.addEventListener('submit', function (event) {
+  event.preventDefault(); // Prevent the default form submission behavior
+
+  // Retrieve form values from input fields
+  const firstName = form.elements[0].value;
+  const lastName = form.elements[1].value;
+  const email = form.elements[2].value;
+
+  // Create an object with the form data
+  const newEntry = {
+    firstName,
+    lastName,
+    email,
+  };
+
+  // Add the new entry to the form data entries array
+  formDataEntries.push(newEntry);
+
+  // Provide feedback to the user (optional)
+  alert('Data saved successfully!');
+
+  console.log(formDataEntries);
+  // Optionally hide the modal and clear form fields
+  form.reset();
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+});
 
 const openModal = function (e) {
   e.preventDefault();
