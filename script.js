@@ -36,7 +36,7 @@ form.addEventListener('submit', function (event) {
   formDataEntries.push(newEntry);
 
   // Provide feedback to the user (optional)
-  alert('Data saved successfully!');
+  alert('Team will contact you Soon, Data Saved Succesfully');
 
   console.log(formDataEntries);
   // Optionally hide the modal and clear form fields
